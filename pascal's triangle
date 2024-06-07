@@ -1,0 +1,20 @@
+class Solution {
+    public List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> answ = new ArrayList<>();
+        for(int i=1;i<=numRows;i++){
+            answ.add(ncr(i));
+        }
+        return answ;
+    }
+    public List<Integer>ncr(int rows){
+        List<Integer> ans = new ArrayList<>();
+        ans.add(1);
+        int res=1;
+        for(int i=1;i<rows;i++){
+            res=res*(rows-i);
+            res=res/(i);
+            ans.add(res);
+        }
+        return ans;
+    }
+}
